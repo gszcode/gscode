@@ -12,7 +12,7 @@ const Header = () => {
     <header className="flex justify-between items-center p-3 fixed bg-color-header w-full h-20">
       <div className="flex items-center w-18 h-10">
         <img className="w-full h-full" src={logo} alt="Logo" title="Logo" />
-        <h1 className="ml-2 text-lg font-semibold text-color-text">GSZCODE</h1>
+        <h1 className="ml-2 text-lg font-semibold text-color-text">GSCODE</h1>
       </div>
       <div className="logo-sm cursor-pointer hover:text-color-text">
         <button onClick={handleClick}>
