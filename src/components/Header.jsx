@@ -9,12 +9,20 @@ const Header = () => {
   }
 
   return (
-    <header className="flex justify-between items-center p-3 fixed bg-color-header w-full h-20">
-      <div className="flex items-center w-18 h-10">
-        <img className="w-full h-full" src={logo} alt="Logo" title="Logo" />
-        <h1 className="ml-2 text-lg font-semibold text-color-text">GSCODE</h1>
-      </div>
-      <div className="logo-sm cursor-pointer hover:text-color-text">
+    <header className="z-10 flex justify-between items-center p-3 fixed bg-white w-full h-20">
+      <a href="/" className="flex items-center w-18 h-10">
+        <img
+          id="logo-title"
+          className="w-full h-full"
+          src={logo}
+          alt="Logo"
+          title="Logo"
+        />
+        <h1 className="ml-2 text-lg font-semibold text-primary-color">
+          GSCODE
+        </h1>
+      </a>
+      <div className="logo-sm cursor-pointer hover:text-primary-color">
         <button onClick={handleClick}>
           {btnMenu === false ? (
             <i className="fa-solid fa-bars text-2xl"></i>
@@ -24,20 +32,22 @@ const Header = () => {
         </button>
       </div>
       <nav
-        className={`w-full bg-color-header absolute top-16 left-0 p-4 ${
+        className={`w-full bg-white absolute top-16 left-0 p-4 ${
           btnMenu === false ? 'hidden' : 'block'
         } nav-transition font-light`}
       >
         <ul className="logo-lg">
-          <li className="my-4 hover:text-color-text cursor-pointer">Inicio</li>
-          <li className="my-4 hover:text-color-text cursor-pointer">
+          <li className="my-4 hover:text-primary-color cursor-pointer">
+            Inicio
+          </li>
+          <li className="my-4 hover:text-primary-color cursor-pointer">
             Metodologías
           </li>
-          <li className="my-4 hover:text-color-text cursor-pointer">
+          <li className="my-4 hover:text-primary-color cursor-pointer">
             Nosotros
           </li>
-          <li className="my-4 hover:text-color-text cursor-pointer">Blog</li>
-          <li className="my-4 hover:text-color-text cursor-pointer font-semibold">
+          <li className="my-4 hover:text-primary-color cursor-pointer">Blog</li>
+          <li className="my-4 hover:text-primary-color cursor-pointer font-semibold">
             Contacto
           </li>
         </ul>
