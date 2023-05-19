@@ -5,7 +5,7 @@ const Footer = () => {
         Copyright &copy; 2023 - <strong>GSZCODE</strong> | Hecho por{' '}
         <a
           href="https://www.linkedin.com/in/gszcode/"
-          className="text-red-800 text-color-text font-semibold"
+          className="text-primary-color font-semibold"
         >
           Gsanchez
         </a>
