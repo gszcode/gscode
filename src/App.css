@@ -4,8 +4,68 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Poppins', sans-serif;
+  transition: all 300ms;
 }
 
-.nav-transition {
-  transition: all 500ms ease-in;
+.background-main {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slide 9s infinite;
+}
+
+@keyframes slide {
+  0% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./img/header-01.webp');
+  }
+  50% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./img/header-02.webp');
+  }
+  100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./img/header-03.webp');
+  }
+}
+
+.break {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 100%, 100% 100%, 100% 90%, 0 98%);
+}
+
+.accordion-item {
+  border: none !important;
+  border-bottom: 1px solid #e7e4e4 !important;
+}
+
+.accordion-button:focus {
+  border-color: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.accordion-button {
+  color: #4f2f99 !important;
+  color: #eae4f740;
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+
+.div {
+  width: 90%;
+  border: 1px solid #efeeee;
+  margin: auto;
 }
