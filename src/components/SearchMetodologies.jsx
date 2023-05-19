@@ -15,7 +15,7 @@ const data = {
 
 const SearchMethodologies = () => {
   return (
-    <section className="p-3">
+    <section className="p-3 mt-10">
       <div>
         <h2 className="font-semibold text-2xl text-center m-4">
           Metolología de búsqueda
