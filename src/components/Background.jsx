@@ -9,7 +9,7 @@ const Background = () => {
   return (
     <main className="w-full h-screen">
       <div className="background-main">
-        <div className="w-full flex flex-col justify-center items-start gap-5 p-5">
+        <div className="w-full flex flex-col justify-center items-start gap-3 p-5">
           <h1 className="text-white tracking-widest text-xl font-thin">
             HEADHUNTER INDUSTRIAL
           </h1>
@@ -17,7 +17,7 @@ const Background = () => {
           <p className="text-grey">
             Nos especializamos en cubrir las necesidades de nuestros clientes.
           </p>
-          <button className="border-2 border-transparent bg-second-color px-8 py-4 hover:bg-transparent hover:text-white hover:border-2 hover:border-white">
+          <button className="border-2 border-transparent bg-second-color px-7 py-2.5 hover:bg-transparent hover:text-white hover:border-2 hover:border-white">
             Saber más <i className="fa-solid fa-arrow-down-long ml-2"></i>
           </button>
         </div>
