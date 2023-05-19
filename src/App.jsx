@@ -1,68 +1,17 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Background from './components/Background'
 import Layout from './components/Layout'
-// import Layout from './components/Layout'
+import WokrkMethodologies from './components/WorkMethodologies'
+import SearchMethodologies from './components/SearchMetodologies'
 
 function App() {
   return (
     <Layout>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
-      <h1>Holi</h1>
+      <Background />
+      <WokrkMethodologies />
+      <div className="div" />
+      <SearchMethodologies />
     </Layout>
   )
 }
