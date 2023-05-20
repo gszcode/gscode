@@ -13,12 +13,6 @@
   background-position: center center;
   height: 100%;
   width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   animation: slide 9s infinite;
 }
 
@@ -68,4 +62,10 @@
   width: 90%;
   border: 1px solid #efeeee;
   margin: auto;
+}
+
+.background-choose {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('./img/header-02.webp');
+  animation: none;
 }
