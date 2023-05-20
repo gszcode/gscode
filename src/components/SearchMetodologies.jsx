@@ -1,18 +1,5 @@
 import AccordionMethodogies from './AccordionMethodogies'
 
-const data = {
-  titleOne: 'Headhunting',
-  titleTwo: 'Base de datos propia',
-  titleThree: 'Portales utilizados',
-  descriptionOne:
-    'Nuestro core business es ser especialistas en salir a buscar candidatos en el mercado laboral.',
-  descriptionTwo:
-    'Invertimos y apostamos en las últimas tecnologías las cuales nos permiten contar con información actualizada de profesionales específicos de nuestras distintas áreas de expertise.',
-  descriptionThree:
-    'Linkedin premium, Licencia de recruiter, Portales de empleo',
-  value: 'search'
-}
-
 const SearchMethodologies = () => {
   return (
     <section className="p-3 mt-10">
@@ -26,7 +13,7 @@ const SearchMethodologies = () => {
         </p>
       </div>
       <div className="my-20">
-        <AccordionMethodogies data={data} />
+        <AccordionMethodogies />
       </div>
     </section>
   )
