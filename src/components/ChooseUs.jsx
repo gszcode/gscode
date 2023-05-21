@@ -2,7 +2,7 @@ import ArticleChoose from './ArticleChoose'
 
 const ChooseUs = () => {
   return (
-    <section className="w-full h-screen relative">
+    <section id="chooseus" className="w-full h-screen relative my-28">
       <div className="background-main background-choose">
         <div className="p-4 h-full flex flex-col items-center justify-evenly">
           <h3 className="text-2xl text-white font-semibold">
