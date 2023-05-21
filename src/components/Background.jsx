@@ -7,7 +7,7 @@ const Background = () => {
   }, [])
 
   return (
-    <main className="w-full h-screen">
+    <main id="home" className="w-full h-screen">
       <div className="background-main flex items-center absolute top-0 left-0">
         <div className="w-full flex flex-col justify-center items-start gap-3 p-3">
           <h1 className="text-white tracking-widest text-xl font-thin">
