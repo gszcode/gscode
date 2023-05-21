@@ -2,20 +2,21 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Background from './components/Background'
 import Layout from './components/Layout'
-import WokrkMethodologies from './components/WorkMethodologies'
-import SearchMethodologies from './components/SearchMetodologies'
 import About from './components/About'
 import ChooseUs from './components/ChooseUs'
+import Blog from './components/Blog'
+import Methodologies from './components/Methodologies'
+import Contact from './components/Contact'
 
 function App() {
   return (
     <Layout>
       <Background />
-      <WokrkMethodologies />
-      <div className="div" />
-      <SearchMethodologies />
+      <Methodologies />
       <About />
       <ChooseUs />
+      <Blog />
+      <Contact />
     </Layout>
   )
 }
