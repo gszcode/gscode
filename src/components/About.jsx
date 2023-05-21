@@ -2,7 +2,7 @@ import imageAbout from '../img/about.jpg'
 
 const About = () => {
   return (
-    <section className="w-full px-3">
+    <section id="about" className="w-full px-3">
       <div className="w-full flex flex-col justify-center items-start gap-3">
         <h2 className="font-bold text-2xl">Nosotros</h2>
         <p className="text-second-grey">
