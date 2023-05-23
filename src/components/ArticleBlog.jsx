@@ -2,7 +2,7 @@ import blogImg from '../img/header-01.webp'
 
 const ArticleBlog = () => {
   return (
-    <article>
+    <article data-aos="fade-up" data-aos-duration="2000">
       <div className="w-full h-40">
         <img className="w-full h-full object-cover" src={blogImg} />
       </div>

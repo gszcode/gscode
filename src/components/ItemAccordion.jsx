@@ -3,7 +3,12 @@ import { methodologies } from '../utils/dataMethodologies'
 
 const ItemAccordion = ({ methodologie }) => {
   return (
-    <>
+    <div
+      data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="500"
+      data-aos-offset="0"
+    >
       {methodologie === 'work'
         ? methodologies.work.map((item) => (
             <Accordion.Item key={item.id} eventKey={item.id} className="p-2">
@@ -33,7 +38,7 @@ const ItemAccordion = ({ methodologie }) => {
               </Accordion.Body>
             </Accordion.Item>
           ))}
-    </>
+    </div>
   )
 }
 

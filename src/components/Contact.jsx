@@ -2,7 +2,11 @@ const Contact = () => {
   return (
     <section id="contact" className="mt-20 w-full h-screen relative">
       <div className="background-main background-contact flex flex-col items-center justify-evenly">
-        <div className="p-4 flex flex-col items-center text-grey">
+        <div
+          className="p-4 flex flex-col items-center text-grey"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <h2 className="text-grey font-semibold text-2xl mt-14 mb-6">
             Contacto
           </h2>
@@ -16,7 +20,11 @@ const Contact = () => {
             <i className="m-2 fa-brands fa-linkedin-in"></i> Gabiel Sanchez
           </p>
         </div>
-        <form className="flex flex-col gap-2 w-full p-4 text-second-grey">
+        <form
+          className="flex flex-col gap-2 w-full p-4 text-second-grey"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <div>
             <input
               className="outline-none w-full h-10 px-3 font-light"

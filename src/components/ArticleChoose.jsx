@@ -1,6 +1,10 @@
 const ArticleChoose = ({ title, description, iconClass }) => {
   return (
-    <article className="flex flex-col items-center text-center text-grey">
+    <article
+      className="flex flex-col items-center text-center text-grey"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
       <div className="bg-third-color w-16 h-16 rounded-[50%] p-7 flex justify-center items-center mb-2">
         <i className={`text-3xl ${iconClass}`}></i>
       </div>

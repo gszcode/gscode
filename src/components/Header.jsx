@@ -18,9 +18,11 @@ const Header = () => {
           alt="Logo"
           title="Logo"
         />
-        <h1 className="ml-2 text-lg font-semibold text-primary-color">
-          GSCODE
-        </h1>
+        <a href="#home">
+          <h1 className="ml-2 text-lg font-semibold text-primary-color">
+            GSCODE
+          </h1>
+        </a>
       </div>
       <div className="logo-sm cursor-pointer hover:text-primary-color">
         <button onClick={handleClick}>

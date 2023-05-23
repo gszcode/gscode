@@ -9,7 +9,11 @@ const Background = () => {
   return (
     <main id="home" className="w-full h-screen">
       <div className="background-main flex items-center absolute top-0 left-0">
-        <div className="w-full flex flex-col justify-center items-start gap-3 p-3">
+        <div
+          className="w-full flex flex-col justify-center items-start gap-3 p-3"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
           <h1 className="text-white tracking-widest text-xl font-thin">
             HEADHUNTER INDUSTRIAL
           </h1>
