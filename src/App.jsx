@@ -9,6 +9,7 @@ import Methodologies from './components/Methodologies'
 import Contact from './components/Contact'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import IconWhatsapp from './components/IconWhatsapp'
 AOS.init()
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <ChooseUs />
       <Blog />
       <Contact />
+      <IconWhatsapp />
     </Layout>
   )
 }
