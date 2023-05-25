@@ -34,7 +34,7 @@ export const methodologies = {
       id: 1,
       title: 'Base de datos propia',
       description:
-        'Invertimos y apostamos en las últimas tecnologías las cuales nos permiten contar con información actualizada de profesionales específicos de nuestras distintas áreas de expertise.',
+        'Invertimos y apostamos en las últimas tecnologías las cuales nos permiten contar con información actualizada de profesionales.',
       iconClass: 'fa-solid fa-database text-2xl'
     },
     {
