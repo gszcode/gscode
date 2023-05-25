@@ -2,7 +2,7 @@ import AccordionMethodogies from './AccordionMethodogies'
 
 const SearchMethodologies = () => {
   return (
-    <section className="p-3 mt-10">
+    <section className="p-3">
       <div data-aos="fade-up" data-aos-duration="2000">
         <h2 className="font-bold text-2xl text-center m-4 md:text-3xl lg:text-4xl">
           Metolología de búsqueda
