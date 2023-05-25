@@ -58,12 +58,6 @@
   box-shadow: none !important;
 }
 
-.div {
-  width: 90%;
-  border: 1px solid #efeeee;
-  margin: auto;
-}
-
 .background-choose {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('./img/header-02.webp');
@@ -95,4 +89,18 @@
     width: 200px !important;
     color: #fff !important;
   }
+}
+
+.focus:hover {
+  color: #000;
+}
+.focus {
+  border-bottom: 1px solid #6610f2;
+  padding: 0 15px;
+}
+
+.item:hover {
+  color: #000;
+  border-bottom: 1px solid #6610f2;
+  transition: none;
 }
