@@ -13,7 +13,11 @@ const ItemAccordion = ({ methodologie }) => {
     >
       {methodologie === 'work'
         ? methodologies.work.map((item) => (
-            <Accordion.Item key={item.id} eventKey={item.id} className="p-2">
+            <Accordion.Item
+              key={item.id}
+              eventKey={item.id}
+              className="p-2 mt-28"
+            >
               <div className="bg-third-color w-16 h-16 rounded-[50%] p-7 flex justify-center items-center ml-3">
                 <i className={item.iconClass}></i>
               </div>
