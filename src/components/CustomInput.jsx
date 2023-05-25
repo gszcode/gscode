@@ -1,4 +1,4 @@
-const CustomInput = ({ placeholder, type }) => {
+const CustomInput = ({ placeholder, type, handleChange, value, name }) => {
   return (
     <div className="md:w-[43%] md:h-[50px] lg:w-[33%]">
       <input
@@ -6,6 +6,9 @@ const CustomInput = ({ placeholder, type }) => {
         placeholder={placeholder}
         type={type}
         required
+        onChange={handleChange}
+        value={value}
+        name={name}
       />
     </div>
   )
