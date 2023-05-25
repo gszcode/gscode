@@ -2,25 +2,19 @@ const NavbarLong = () => {
   return (
     <nav className="hidden lg:block">
       <ul className="logo-lg flex items-start gap-4 text-lg">
-        <a href="#home" className="hover:text-primary-color cursor-pointer">
+        <a href="#home" className="cursor-pointer focus">
           Inicio
         </a>
-        <a
-          href="#methodologies"
-          className="hover:text-primary-color cursor-pointer"
-        >
+        <a href="#methodologies" className="cursor-pointer px-2 item">
           Metodologías
         </a>
-        <a href="#about" className="hover:text-primary-color cursor-pointer">
+        <a href="#about" className="cursor-pointer px-2 item">
           Nosotros
         </a>
-        <a href="#blog" className="hover:text-primary-color cursor-pointer">
+        <a href="#blog" className="cursor-pointer px-2 item">
           Blog
         </a>
-        <a
-          href="#contact"
-          className="hover:text-primary-color cursor-pointer font-semibold"
-        >
+        <a href="#contact" className="cursor-pointer px-2 font-semibold item">
           Contacto
         </a>
       </ul>
