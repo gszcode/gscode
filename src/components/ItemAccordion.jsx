@@ -2,7 +2,6 @@ import Accordion from 'react-bootstrap/Accordion'
 import { methodologies } from '../utils/dataMethodologies'
 
 const ItemAccordion = ({ methodologie }) => {
-  console.log(methodologies)
   return (
     <div
       className="lg:flex lg:justify-center lg:items-center lg:gap-10"
