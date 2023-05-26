@@ -18,7 +18,7 @@ const Background = () => {
             HEADHUNTER INDUSTRIAL
           </h1>
           <h2 className="font-bold text-white text-4xl md:text-5xl lg:text-7xl">
-            Magna Consulting
+            G.sz Consulting
           </h2>
           <p className="text-grey md:text-lg">
             Nos especializamos en cubrir las necesidades de nuestros clientes.

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../img/logo.jpg'
 import NavbarLong from './NavbarLong'
 import NavbarSmall from './NavbarSmall'
@@ -13,11 +14,11 @@ const Header = () => {
           alt="Logo"
           title="Logo"
         />
-        <a href="#home">
+        <Link to="/">
           <h1 className="ml-2 text-lg font-semibold text-primary-color md:text-2xl lg:text-3xl">
             GSCODE
           </h1>
-        </a>
+        </Link>
       </div>
       <NavbarSmall />
       <NavbarLong />

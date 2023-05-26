@@ -104,3 +104,8 @@
   border-bottom: 1px solid #6610f2;
   transition: none;
 }
+
+.line:hover {
+  color: #3c94cb;
+  border-bottom: 1px solid #3c94cb;
+}
