@@ -10,7 +10,7 @@ const NavbarSmall = () => {
   return (
     <>
       <div className="logo-sm cursor-pointer hover:text-primary-color lg:hidden">
-        <button onClick={handleClick}>
+        <button onClick={handleClick} type="button">
           {btnMenu === false ? (
             <i className="fa-solid fa-bars text-2xl"></i>
           ) : (
