@@ -1,5 +1,7 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
 import { authService } from './authService'
+
+export const resetState = createAction('Reset_all')
 
 const initialState = {
   isLoading: false,
@@ -40,6 +42,9 @@ export const authSlice = createSlice({
       .addCase(loginAdmin.rejected, (state, action) => {
         state.isLoading = false
         state.isError = action.error
+      })
+      .addCase(resetState, (state) => {
+        state.isError = false
       })
   }
 })
