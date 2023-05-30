@@ -15,6 +15,7 @@ const NavbarSmall = () => {
 
   const handleClick = () => {
     dispatch(logout())
+    localStorage.clear()
 
     return navigate('/admin')
   }
@@ -57,7 +58,7 @@ const NavbarSmall = () => {
           >
             Contacto
           </a>
-          {authAdmin.isAuthenticated && (
+          {authAdmin.auth && (
             <Link
               to="/admin/add-blog"
               className="hover:text-primary-color cursor-pointer"
@@ -65,7 +66,7 @@ const NavbarSmall = () => {
               Agregar Blog
             </Link>
           )}
-          {authAdmin.isAuthenticated && (
+          {authAdmin.auth && (
             <button onClick={handleClick} className="cursor-pointer item">
               Cerrar sesión
             </button>

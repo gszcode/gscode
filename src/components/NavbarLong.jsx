@@ -9,6 +9,7 @@ const NavbarLong = () => {
 
   const handleClick = () => {
     dispatch(logout())
+    localStorage.clear()
 
     return navigate('/admin')
   }
@@ -31,12 +32,12 @@ const NavbarLong = () => {
         <a href="#contact" className="cursor-pointer px-2 font-semibold item">
           Contacto
         </a>
-        {authAdmin.isAuthenticated && (
+        {authAdmin.auth && (
           <Link to="/admin/add-blog" className="cursor-pointer px-2 item">
             Agregar Blog
           </Link>
         )}
-        {authAdmin.isAuthenticated && (
+        {authAdmin.auth && (
           <button onClick={handleClick} className="cursor-pointer px-2 item">
             Cerrar sesión
           </button>
