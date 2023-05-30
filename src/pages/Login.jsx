@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginAdmin } from '../slides/auth/authSlide'
+import { loginAdmin, resetState } from '../slides/auth/authSlide'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const initialState = {
   email: '',
@@ -21,7 +22,21 @@ const Login = () => {
     } else {
       return navigate('/admin')
     }
-  }, [authAdmin.auth, navigate])
+  }, [authAdmin, navigate])
+
+  useEffect(() => {
+    if (authAdmin.isError[0]) {
+      Swal.fire({
+        text: authAdmin.isError[1],
+        icon: 'error',
+        confirmButtonText: 'Cerrar'
+      })
+
+      dispatch(resetState())
+    }
+
+    setForm(initialState)
+  }, [authAdmin, dispatch])
 
   const handleSubmit = (e) => {
     e.preventDefault()
