@@ -1,10 +1,38 @@
-import { createSlice } from '@reduxjs/toolkit'
-// import { blogService } from './blogService'
+import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
+import { blogService } from './blogService'
+
+export const resetState = createAction('Reset_all')
 
 const initialState = {
   allBlogs: [],
-  oneBlog: {}
+  oneBlog: {},
+  isLoading: false,
+  isError: false,
+  isCreated: false,
+  isDeleted: false
 }
+
+export const addBlog = createAsyncThunk(
+  'blog/create-blog',
+  async (dataBlog, thunkAPI) => {
+    try {
+      return await blogService.addBlog(dataBlog)
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error)
+    }
+  }
+)
+
+export const deleteBlog = createAsyncThunk(
+  'blog/delete-blog',
+  async (idBlog, thunkAPI) => {
+    try {
+      return await blogService.deleteBlog(idBlog)
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error)
+    }
+  }
+)
 
 export const blogSlice = createSlice({
   name: 'blog',
@@ -12,11 +40,43 @@ export const blogSlice = createSlice({
   reducers: {
     getAllBlogs: (state, action) => {
       state.allBlogs = action.payload
+    },
+    getABlog: (state, action) => {
+      state.oneBlog = action.payload
     }
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(addBlog.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(addBlog.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isCreated = action.payload
+      })
+      .addCase(addBlog.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = action.error
+      })
+      .addCase(deleteBlog.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(deleteBlog.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isDeleted = action.payload
+      })
+      .addCase(deleteBlog.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = action.error
+      })
+      .addCase(resetState, (state) => {
+        state.isCreated = false
+        state.isDeleted = false
+      })
   }
 })
 
-export const { getAllBlogs } = blogSlice.actions
+export const { getAllBlogs, getABlog } = blogSlice.actions
 
 export default blogSlice.reducer
 
@@ -26,6 +86,16 @@ export const getBlogs = () => {
       .then((res) => res.json())
       .then((data) => {
         dispatch(getAllBlogs(data.blogs))
+      })
+  }
+}
+
+export const getBlog = (idBlog) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/blog/get-blog/${idBlog}`)
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(getABlog(data.blog))
       })
   }
 }
