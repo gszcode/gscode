@@ -1,16 +1,58 @@
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginAdmin } from '../slides/auth/authSlide'
+import { useNavigate } from 'react-router-dom'
+
+const initialState = {
+  email: '',
+  password: ''
+}
+
 const Login = () => {
+  const [form, setForm] = useState(initialState)
+  const { authAdmin } = useSelector((state) => state)
+  const dispatch = useDispatch()
+  const navigate = useNavigate('')
+
+  useEffect(() => {
+    if (authAdmin.auth) {
+      return navigate('/admin/add-blog')
+    } else {
+      return navigate('/admin')
+    }
+  }, [authAdmin.auth, navigate])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    dispatch(loginAdmin(form))
+  }
+
+  const handleChange = (e) => {
+    const { value, name } = e.target
+
+    setForm({
+      ...form,
+      [name]: value
+    })
+  }
+
   return (
     <section className="w-full min-h-screen flex flex-col justify-center items-center">
       <h2 className="w-100 text-center text-primary-color text-2xl my-8 font-bold">
         ¡Bienvenido @Admin!
       </h2>
       <h3 className="text-center text-lg mb-8">Inicia sesíon para continuar</h3>
-      <form className="flex flex-col gap-16">
+      <form className="flex flex-col gap-16" onSubmit={handleSubmit}>
         <div className="w-80 h-10 border-b border-shadow">
           <input
             placeholder="Email"
             type="email"
             className="w-full h-full p-3 outline-none"
+            value={form.email}
+            required
+            onChange={handleChange}
+            name="email"
           />
         </div>
         <div className="w-80 h-10 border-b border-shadow">
@@ -18,6 +60,10 @@ const Login = () => {
             placeholder="Contraseña"
             type="password"
             className="w-full h-full p-3 outline-none"
+            value={form.password}
+            required
+            onChange={handleChange}
+            name="password"
           />
         </div>
 
