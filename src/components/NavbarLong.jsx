@@ -16,7 +16,7 @@ const NavbarLong = () => {
 
   return (
     <nav className="hidden lg:block">
-      <ul className="logo-lg flex items-start gap-4 text-lg">
+      <ul className="logo-lg flex items-start gap-4 text-[15px]">
         <a href="#home" className="cursor-pointer focus">
           Inicio
         </a>
