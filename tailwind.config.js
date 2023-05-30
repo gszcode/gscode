@@ -12,7 +12,8 @@ export default {
       grey: '#F9F9F9',
       transparent: 'transparent',
       whatsapp: '#1BD741',
-      whatsappHover: '#46C254'
+      whatsappHover: '#46C254',
+      delete: '#dc3545'
     },
     extend: {}
   },
