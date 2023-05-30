@@ -23,7 +23,18 @@ const deleteBlog = async (idBlog) => {
   return response.data
 }
 
+const updateBlog = async ({ id, form }) => {
+  const response = await axios.put(
+    `http://localhost:3000/api/blog/update-blog/${id}`,
+    form,
+    config
+  )
+
+  return response.data
+}
+
 export const blogService = {
   addBlog,
-  deleteBlog
+  deleteBlog,
+  updateBlog
 }
