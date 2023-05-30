@@ -1,32 +1,39 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
+const initialState = {
+  title: '',
+  description: '',
+  image: ''
+}
+
 const AddBlog = () => {
+  const [form, setForm] = useState(initialState)
   const { authAdmin } = useSelector((state) => state)
   const navigate = useNavigate('')
 
   useEffect(() => {
-    if (!authAdmin.isAuthenticated) return navigate('/admin')
+    if (!authAdmin.auth) return navigate('/admin')
   }, [authAdmin, navigate])
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // dispatch(loginAdmin(form))
+    console.log(form)
   }
 
-  const handleChange = () => {
-    // const { value, name } = e.target
-    // setForm({
-    //   ...form,
-    //   [name]: value
-    // })
+  const handleChange = (e) => {
+    const { value, name } = e.target
+    setForm({
+      ...form,
+      [name]: value
+    })
   }
 
   return (
     <>
-      {authAdmin.isAuthenticated && (
+      {authAdmin.auth && (
         <section className="w-full min-h-screen flex flex-col justify-center items-center">
           <h2 className="w-100 text-center text-primary-color text-2xl my-8 font-bold">
             Agregar nuevo Blog
@@ -37,10 +44,10 @@ const AddBlog = () => {
                 placeholder="Titulo"
                 type="text"
                 className="w-full h-full p-3 outline-none"
-                // value={form.email}
                 required
                 onChange={handleChange}
-                name="titulo"
+                name="title"
+                value={form.title}
               />
             </div>
             <div className="w-80 h-10 border-b border-shadow">
@@ -48,20 +55,20 @@ const AddBlog = () => {
                 placeholder="Descripcion"
                 type="text"
                 className="w-full h-full p-3 outline-none"
-                // value={form.email}
                 required
                 onChange={handleChange}
                 name="description"
+                value={form.description}
               />
             </div>
-            <div className="w-80 h-10 border-b border-shadow">
+            <div className="w-100 h-20">
               <input
                 type="file"
                 className="w-full h-full p-3 outline-none"
-                // value={form.email}
                 required
                 onChange={handleChange}
                 name="image"
+                value={form.image}
               />
             </div>
 
