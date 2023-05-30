@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { addBlog, resetState } from '../slides/blog/blogSlice'
+import Swal from 'sweetalert2'
 
 const initialState = {
   title: '',
@@ -11,7 +13,38 @@ const initialState = {
 const AddBlog = () => {
   const [form, setForm] = useState(initialState)
   const { authAdmin } = useSelector((state) => state)
+  const { blogAdmin } = useSelector((state) => state)
+  const dispatch = useDispatch()
   const navigate = useNavigate('')
+
+  useEffect(() => {
+    if (blogAdmin.isCreated.success) {
+      Swal.fire({
+        text: blogAdmin.isCreated.message,
+        icon: 'success',
+        confirmButtonText: 'Cerrar'
+      })
+
+      dispatch(resetState())
+      navigate('/blogs')
+    }
+
+    setForm(initialState)
+  }, [blogAdmin, navigate, dispatch])
+
+  useEffect(() => {
+    if (blogAdmin.isError) {
+      Swal.fire({
+        text: 'Ocurrio un Error',
+        icon: 'error',
+        confirmButtonText: 'Cerrar'
+      })
+
+      dispatch(resetState())
+    }
+
+    setForm(initialState)
+  }, [blogAdmin, dispatch])
 
   useEffect(() => {
     if (!authAdmin.auth) return navigate('/admin')
@@ -20,7 +53,7 @@ const AddBlog = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    console.log(form)
+    dispatch(addBlog(form))
   }
 
   const handleChange = (e) => {
@@ -39,7 +72,7 @@ const AddBlog = () => {
             Agregar nuevo Blog
           </h2>
           <form className="flex flex-col gap-16" onSubmit={handleSubmit}>
-            <div className="w-80 h-10 border-b border-shadow">
+            <div className="w-80 h-10 border-b border-shadow lg:w-100">
               <input
                 placeholder="Titulo"
                 type="text"
@@ -50,7 +83,7 @@ const AddBlog = () => {
                 value={form.title}
               />
             </div>
-            <div className="w-80 h-10 border-b border-shadow">
+            <div className="w-80 h-10 border-b border-shadow lg:w-100">
               <input
                 placeholder="Descripcion"
                 type="text"
@@ -61,7 +94,7 @@ const AddBlog = () => {
                 value={form.description}
               />
             </div>
-            <div className="w-100 h-20">
+            <div className="w-80 h-20 lg:w-100">
               <input
                 type="file"
                 className="w-full h-full p-3 outline-none"
