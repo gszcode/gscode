@@ -83,11 +83,11 @@ const AddBlog = () => {
                 value={form.title}
               />
             </div>
-            <div className="w-80 h-10 border-b border-shadow lg:w-100">
-              <input
+            <div className="w-80 h-44 border-b border-shadow lg:w-100">
+              <textarea
                 placeholder="Descripcion"
                 type="text"
-                className="w-full h-full p-3 outline-none"
+                className="w-full h-full p-3 outline-none resize-none"
                 required
                 onChange={handleChange}
                 name="description"
