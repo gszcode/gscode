@@ -1,11 +1,19 @@
 import axios from 'axios'
+const token = localStorage.getItem('token')
+const config = {
+  headers: { Authorization: `Bearer ${token}` }
+}
 
-const getBlogs = async () => {
-  const response = await axios('http://localhost:3000/api/blog/get-blogs')
+const addBlog = async (dataBlog) => {
+  const response = await axios.post(
+    'http://localhost:3000/api/blog/create-blogs',
+    dataBlog,
+    config
+  )
 
   return response.data
 }
 
 export const blogService = {
-  getBlogs
+  addBlog
 }

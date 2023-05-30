@@ -4,8 +4,6 @@ import { authService } from './authService'
 const initialState = {
   isLoading: false,
   isError: false,
-  isSuccess: false,
-  isAuthenticated: false,
   auth: null
 }
 
@@ -36,15 +34,12 @@ export const authSlice = createSlice({
       })
       .addCase(loginAdmin.fulfilled, (state, action) => {
         state.isLoading = false
-        state.isError = false
-        state.isSuccess = true
-        state.isAuthenticated = true
-        state.auth = action.payload
+        state.isError = [action.payload.error, action.payload.message]
+        state.auth = action.payload.token
       })
       .addCase(loginAdmin.rejected, (state, action) => {
         state.isLoading = false
         state.isError = action.error
-        state.isSuccess = false
       })
   }
 })
