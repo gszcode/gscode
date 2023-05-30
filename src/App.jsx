@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound'
 import BlogId from './pages/BlogId'
 import AllBlogs from './pages/AllBlogs'
 import AddBlog from './pages/AddBlog'
+import UpdateBlog from './pages/UpdateBlog'
 AOS.init()
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/blog/:id" element={<BlogId />} />
         <Route path="/blogs" element={<AllBlogs />} />
         <Route path="/admin/add-blog" element={<AddBlog />} />
+        <Route path="/admin/update-blog/:id" element={<UpdateBlog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
