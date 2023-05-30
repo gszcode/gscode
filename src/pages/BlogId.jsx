@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { deleteBlog, getBlog, resetState } from '../slides/blog/blogSlice'
@@ -9,7 +9,6 @@ const BlogId = () => {
   const { auth } = useSelector((state) => state.authAdmin)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   const { id } = useParams()
 
   useEffect(() => {
@@ -53,9 +52,12 @@ const BlogId = () => {
         </div>
         <div className="flex flex-col justify-center gap-2 lg:flex-row lg:justify-start">
           {auth && (
-            <button className="bg-second-color py-2 text-white lg:w-[245px]">
+            <Link
+              to={`/admin/update-blog/${oneBlog._id}`}
+              className="bg-second-color text-center py-2 text-white lg:w-[245px]"
+            >
               Editar
-            </button>
+            </Link>
           )}
           {auth && (
             <button
