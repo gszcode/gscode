@@ -18,7 +18,7 @@ const Login = () => {
   useEffect(() => {
     if (authAdmin.auth) {
       localStorage.setItem('token', authAdmin.auth)
-      return navigate('/admin/add-blog')
+      return navigate('/')
     } else {
       return navigate('/admin')
     }
