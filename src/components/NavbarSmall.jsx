@@ -1,16 +1,28 @@
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { logout } from '../slides/auth/authSlide'
 
 const NavbarSmall = () => {
+  const { authAdmin } = useSelector((state) => state)
   const [btnMenu, setBtnMenu] = useState(false)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleClickBtn = () => {
+    setBtnMenu((prev) => !prev)
+  }
 
   const handleClick = () => {
-    setBtnMenu((prev) => !prev)
+    dispatch(logout())
+
+    return navigate('/admin')
   }
 
   return (
     <>
       <div className="logo-sm cursor-pointer hover:text-primary-color lg:hidden">
-        <button onClick={handleClick} type="button">
+        <button onClick={handleClickBtn} type="button">
           {btnMenu === false ? (
             <i className="fa-solid fa-bars text-2xl"></i>
           ) : (
@@ -45,6 +57,19 @@ const NavbarSmall = () => {
           >
             Contacto
           </a>
+          {authAdmin.isAuthenticated && (
+            <Link
+              to="/admin/add-blog"
+              className="hover:text-primary-color cursor-pointer"
+            >
+              Agregar Blog
+            </Link>
+          )}
+          {authAdmin.isAuthenticated && (
+            <button onClick={handleClick} className="cursor-pointer item">
+              Cerrar sesión
+            </button>
+          )}
         </ul>
       </nav>
     </>
