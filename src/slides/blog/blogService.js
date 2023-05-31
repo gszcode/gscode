@@ -6,7 +6,7 @@ const config = {
 
 const addBlog = async (dataBlog) => {
   const response = await axios.post(
-    'http://localhost:3000/api/blog/create-blog',
+    `https://blog-server-w573.onrender.com/api/blog/create-blog`,
     dataBlog,
     config
   )
@@ -16,7 +16,7 @@ const addBlog = async (dataBlog) => {
 
 const deleteBlog = async (idBlog) => {
   const response = await axios.delete(
-    `http://localhost:3000/api/blog/delete-blog/${idBlog}`,
+    `https://blog-server-w573.onrender.com/api/blog/delete-blog/${idBlog}`,
     config
   )
 
@@ -25,7 +25,7 @@ const deleteBlog = async (idBlog) => {
 
 const updateBlog = async ({ id, form }) => {
   const response = await axios.put(
-    `http://localhost:3000/api/blog/update-blog/${id}`,
+    `https://blog-server-w573.onrender.com/api/blog/update-blog/${id}`,
     form,
     config
   )
