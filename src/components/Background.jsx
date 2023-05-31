@@ -1,13 +1,28 @@
 import { useEffect } from 'react'
 import { preloadImages } from '../utils/preloadImages'
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Background = () => {
+  const { auth } = useSelector((state) => state.authAdmin)
+
   useEffect(() => {
     preloadImages()
   }, [])
 
   return (
-    <main id="home" className="w-full h-screen">
+    <main id="home" className="w-full h-screen relative">
+      <div className="fixed top-32 right-14 z-[100] py-8 px-3 bg-white shadow-md">
+        {!auth ? (
+          <Link to="/admin">
+            Probar <span className="text-primary-color">Administrador</span>
+          </Link>
+        ) : (
+          <p>
+            Bienvenido <span className="text-primary-color">@Admin</span>
+          </p>
+        )}
+      </div>
       <div className="background-main flex items-center absolute top-0 left-0">
         <div
           className="w-full flex flex-col justify-center items-start gap-3 p-3 lg:w-96"
