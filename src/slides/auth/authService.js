@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const loginAdmin = async (dataAdmin) => {
   const response = await axios.post(
-    'http://localhost:3000/api/auth/login',
+    'https://blog-server-w573.onrender.com/api/auth/login',
     dataAdmin
   )
 
