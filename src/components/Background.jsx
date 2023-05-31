@@ -12,10 +12,11 @@ const Background = () => {
 
   return (
     <main id="home" className="w-full h-screen relative">
-      <div className="fixed top-32 right-14 z-[100] py-8 px-3 bg-white shadow-md">
+      <div className="fixed top-56 right-4 z-[10] py-4 px-2 bg-white shadow-md md:top-36">
         {!auth ? (
           <Link to="/admin">
-            Probar <span className="text-primary-color">Administrador</span>
+            Probar <br className="md:hidden" />
+            <span className="text-primary-color">Administrador</span>
           </Link>
         ) : (
           <p>
