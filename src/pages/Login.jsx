@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 const initialState = {
-  email: '',
-  password: ''
+  email: 'admin@gmail.com',
+  password: 'adminpassword'
 }
 
 const Login = () => {
