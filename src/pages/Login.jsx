@@ -11,6 +11,7 @@ const initialState = {
 
 const Login = () => {
   const [form, setForm] = useState(initialState)
+  const [loading, setLoading] = useState(false)
   const { authAdmin } = useSelector((state) => state)
   const dispatch = useDispatch()
   const navigate = useNavigate('')
@@ -42,6 +43,7 @@ const Login = () => {
     e.preventDefault()
 
     dispatch(loginAdmin(form))
+    setLoading(true)
   }
 
   const handleChange = (e) => {
@@ -87,7 +89,7 @@ const Login = () => {
           type="submit"
           className="cursor-pointer bg-demo text-center px-2 py-1 bg-second-color text-white"
         >
-          Ingresar
+          {loading ? 'Loading...' : 'Ingresar'}
         </button>
       </form>
     </section>
