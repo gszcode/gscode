@@ -1,14 +1,8 @@
-import { useEffect } from 'react'
-import { preloadImages } from '../utils/preloadImages'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const Background = () => {
   const { auth } = useSelector((state) => state.authAdmin)
-
-  useEffect(() => {
-    preloadImages()
-  }, [])
 
   return (
     <main id="home" className="w-full h-screen relative">
