@@ -39,7 +39,7 @@ const BlogId = () => {
           {oneBlog.title}
         </h3>
         <div className="lg:flex gap-4 my-10">
-          <div className="w-full h-full md:h-[450px] lg:min-w-[640px] lg:h-[500px]">
+          <div className="w-full h-full md:h-[450px] lg:min-w-[640px] lg:max-w-[640px] lg:h-[500px]">
             <img
               className="w-full h-full object-cover"
               src={oneBlog.image}
