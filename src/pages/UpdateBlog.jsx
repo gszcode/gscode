@@ -6,8 +6,7 @@ import { updateBlog } from '../slides/blog/blogSlice'
 
 const initialState = {
   title: '',
-  description: '',
-  image: ''
+  description: ''
 }
 
 const UpdateBlog = () => {
@@ -75,15 +74,6 @@ const UpdateBlog = () => {
                 onChange={handleChange}
                 name="description"
                 value={form.description}
-              />
-            </div>
-            <div className="w-80 h-20 lg:w-100">
-              <input
-                type="file"
-                className="w-full h-full p-3 outline-none"
-                onChange={handleChange}
-                name="image"
-                value={form.image}
               />
             </div>
 
