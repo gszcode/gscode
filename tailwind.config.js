@@ -10,6 +10,7 @@ export default {
       white: '#fff',
       black: '#000',
       grey: '#F9F9F9',
+      shadow: '#7f7e7f',
       transparent: 'transparent',
       whatsapp: '#1BD741',
       whatsappHover: '#46C254',
