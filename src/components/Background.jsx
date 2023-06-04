@@ -6,7 +6,7 @@ const Background = () => {
 
   return (
     <main id="home" className="w-full h-screen relative">
-      <div className="fixed top-56 right-4 z-[10] py-4 px-2 bg-white shadow-md md:top-36">
+      {/* <div className="fixed top-56 right-4 z-[10] py-4 px-2 bg-white shadow-md md:top-36">
         {!auth ? (
           <Link to="/admin">
             Probar <br className="md:hidden" />
@@ -17,7 +17,7 @@ const Background = () => {
             Bienvenido <span className="text-primary-color">@Admin</span>
           </p>
         )}
-      </div>
+      </div> */}
       <div className="background-main flex items-center absolute top-0 left-0">
         <div
           className="w-full flex flex-col justify-center items-start gap-3 p-3 lg:w-96"
