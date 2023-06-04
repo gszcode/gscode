@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+// import { Link } from 'react-router-dom'
+// import { useSelector } from 'react-redux'
 
 const Background = () => {
-  const { auth } = useSelector((state) => state.authAdmin)
+  // const { auth } = useSelector((state) => state.authAdmin)
 
   return (
     <main id="home" className="w-full h-screen relative">
