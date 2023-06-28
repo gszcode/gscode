@@ -11,7 +11,7 @@ const Contact = () => {
           data-aos-duration="2000"
         >
           <p className="text-lg cursor-pointer hover:text-second-color md:ml-4">
-            <i className="m-2 fa-brands fa-whatsapp"></i> +54 1129629042
+            <i className="m-2 fa-brands fa-whatsapp"></i> +54 1128629042
           </p>
           <p className="text-lg cursor-pointer hover:text-second-color md:ml-4">
             <i className="m-2 fa-regular fa-envelope"></i> gszcode@gmail.com
